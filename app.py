@@ -21,7 +21,7 @@ def index():
     #return '<h1>BankBros Krediler Anasayfası</h1>'
     return render_template('input.html') 
 
-@app.route('/api/credit', methods=['GET', 'POST'])
+@app.route('/result', methods=['GET', 'POST'])
 def creditPrediction():
     if(request.data != None):
         data = request.get_json()
@@ -48,7 +48,7 @@ def creditPrediction():
 
 if __name__ == '__main__':
     try:
-        app.run(debug=False, port=8080)
+        app.run(debug=False)
         print("Sunucu aktif!")
     except:
         print("Sunucu hatası!")
