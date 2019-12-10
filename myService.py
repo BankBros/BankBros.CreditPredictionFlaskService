@@ -25,11 +25,11 @@ def index():
 def creditPrediction():
     if(request.data != None):
         data = request.get_json()
-        creditAmount = data['creditAmount']
-        personAge = data['age']
-        personHome = data['home']
-        personCreditCount = data['creditcount']
-        personPhone = data['phone']
+        creditAmount = data['Amount']
+        personAge = data['Age']
+        personHome = data['HasHome']
+        personCreditCount = data['HasCredit']
+        personPhone = data['HasPhone']
         
         predict = myModel.predict([[float(creditAmount),
                                     float(personAge),
