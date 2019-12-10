@@ -39,10 +39,12 @@ def creditPrediction():
         creditResult = predict[0]
         if(creditResult>=1):
             creditState = "Kredi verilebilir."
+            creditResult = 1
         else:
             creditState = "Kredi verilemez."
+            creditResult = 0
         
-        return jsonify({"error":None, "data":{"Kredi başvuru sonucu:":creditState}})
+        return jsonify({"error":None, "data":{"Message":creditState,"Success":creditResult}})
     else:
         return jsonify({"error":"Bir hata meydana geldi.", "data":None})
 
