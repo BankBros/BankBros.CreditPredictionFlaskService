@@ -27,7 +27,7 @@ def creditPrediction():
         data = request.get_json()
         creditAmount = data['Amount']
         personAge = data['Age']
-        personHome = data['HasHome']
+        personHome = data['HasHouse']
         personCreditCount = data['UsedCredits']
         personPhone = data['HasPhone']
         
@@ -44,9 +44,9 @@ def creditPrediction():
             creditState = "Kredi verilemez."
             creditResult = 0
         
-        return jsonify({"error":None, "data":{"Message":creditState,"Success":creditResult}})
+        return jsonify({"Error":None, "Data":{"Message":creditState,"Success":creditResult}})
     else:
-        return jsonify({"error":"Bir hata meydana geldi.", "data":None})
+        return jsonify({"Error":"Bir hata meydana geldi.", "Data":None})
 
 if __name__ == '__main__':
     try:
